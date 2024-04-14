@@ -1,0 +1,49 @@
+
+-----------------------------------------
+Evaluating structure 1p:
+(10, 14951)
+Average precision: 0.3795918367346939
+Average recall: 0.8622974543206192
+Average hits@3: 0.7960607158939889
+
+-----------------------------------------
+Evaluating structure 2p:
+(10, 14951)
+Average precision: 0.7653061224489796
+Average recall: 0.04567489572332576
+Average hits@3: 0.041380557827978524
+
+-----------------------------------------
+Evaluating structure 3p:
+(10, 14951)
+Average precision: 0.6673469387755102
+Average recall: 0.036314977835829564
+Average hits@3: 0.008775535020552056
+
+-----------------------------------------
+Evaluating structure 2i:
+(10, 14951)
+Average precision: 0.9408163265306122
+Average recall: 0.10862688678601004
+Average hits@3: 0.1491791857358981
+
+-----------------------------------------
+Evaluating structure 3i:
+(10, 14951)
+Average precision: 0.9734693877551021
+Average recall: 0.10924743630166552
+Average hits@3: 0.2081108237343452
+
+-----------------------------------------
+Evaluating structure ip:
+(10, 14951)
+Average precision: 0.7428571428571428
+Average recall: 0.023747887225187354
+Average hits@3: 0.010910339957272041
+
+-----------------------------------------
+Evaluating structure pi:
+(10, 14951)
+Average precision: 0.8081632653061224
+Average recall: 0.06855797819311968
+Average hits@3: 0.03641335515839422

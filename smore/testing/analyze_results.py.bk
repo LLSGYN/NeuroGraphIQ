@@ -1,0 +1,62 @@
+import os.path as osp
+import pickle as pkl
+
+def calculate_precision_recall(idx, ans):
+    # 计算 Precision（精确率）
+    if not idx:
+        precision = 0.0
+    else:
+        correct_predictions = len(set(idx) & set(ans))
+        precision = correct_predictions / len(idx)
+    
+    # 计算 Recall（召回率）
+    if not ans:
+        recall = 0.0
+    else:
+        correct_predictions = len(set(idx) & set(ans))
+        recall = correct_predictions / len(ans)
+    
+    return precision, recall
+
+# def evaluate(idx, ans):
+
+data_path = 'data/FB15k'
+with open(osp.join(data_path, 'rdf_results.pkl'), 'rb') as f:
+    rdf_results = pkl.load(f)
+with open(osp.join(data_path, 'ngdb_results.pkl'), 'rb') as f:
+    ngdb_results = pkl.load(f)
+
+with open(osp.join(data_path, 'smore_queries.pkl'), 'rb') as f:
+    queries = pkl.load(f)
+# assert len(rdf_results) == len(ngdb_results)
+
+with open(osp.join(data_path, 'ent2id.pkl'), 'rb') as f:
+    ent2id = pkl.load(f)
+with open(osp.join(data_path, 'rel2id.pkl'), 'rb') as f:
+    rel2id = pkl.load(f)
+with open(osp.join(data_path, 'test-1p-answers.pkl'), 'rb') as f:
+    answers = pkl.load(f)
+
+# total_ans = []
+# for q in queries['1p']:
+#     lines = q.split('\n')
+#     line = lines[3].strip().split(' ')
+#     e = "/" + line[0][1:].replace('.', '/')
+#     r = "+/" + line[1][1:].replace('.', '/')
+#     key = (ent2id[e], (rel2id[r],))
+#     total_ans.append(answers[key])
+
+# avg_precision = avg_recall = 0
+# for res, ans in zip(ngdb_results['1p'], total_ans):
+#     precision, recall = calculate_precision_recall(res, ans)
+#     avg_precision += precision
+#     avg_recall += recall
+# print(avg_precision / 80, avg_recall / 80)
+
+
+# query_types = ['1p', '2p', '3p', '2i', '3i', 'ip', 'pi']
+
+# for qtype in query_types:
+#     for res, ans in zip(ngdb_results[qtype], total_ans[qtype]):
+#         evaluate(res, ans)
+

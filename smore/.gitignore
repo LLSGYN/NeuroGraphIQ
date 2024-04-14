@@ -1,0 +1,11 @@
+*.egg-info/
+logs/
+.vscode/
+.ipynb_checkpoints/
+build/
+data/
+*.so
+*.d
+*.o
+__pycache__/
+.DS_Store
